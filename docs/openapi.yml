@@ -61,12 +61,12 @@ paths:
             schema:
               type: object
               required:
-                - newPassword
+                - password
               properties:
-                newPassword:
+                password:
                   type: string
               example:
-                newPassword: "thisisnewpassword"
+                password: "thisisnewpassword"
       responses:
         "200":
           description: "success"
