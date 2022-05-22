@@ -56,10 +56,10 @@ paths:
               examples:
                 example1:
                   value:
-                    message: "It is necessary to specify the username for registration."
+                    message: "Username is required for registration."
                 example2:
                   value:
-                    message: "It is necessary to specify the password used for authentication."
+                    message: "Password is required for authentication."
         "409":
           description: "client error"
           content:
@@ -72,7 +72,7 @@ paths:
                   message:
                     type: string
               example:
-                message: "This user already exist."
+                message: "Username has already been taken."
   "/v1/users/{username}":
     put:
       summary: "update user"
@@ -124,7 +124,7 @@ paths:
                   message:
                     type: string
               example:
-                message: "It is necessary to specify the password for update."
+                message: "Password is required for authentication."
         "401":
           description: "client error"
           content:
