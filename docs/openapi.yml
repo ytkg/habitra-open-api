@@ -42,6 +42,37 @@ paths:
                     type: string
               example:
                 message: "Success."
+        "400":
+          description: "client error"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+              examples:
+                example1:
+                  value:
+                    message: "It is necessary to specify the username for registration."
+                example2:
+                  value:
+                    message: "It is necessary to specify the password used for authentication."
+        "409":
+          description: "client error"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+              example:
+                message: "This user already exist."
   "/v1/users/{username}":
     put:
       summary: "update user"
@@ -81,6 +112,32 @@ paths:
                     type: string
               example:
                 message: "Success."
+        "400":
+          description: "client error"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+              example:
+                message: "It is necessary to specify the password for update."
+        "401":
+          description: "client error"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+              example:
+                message: "Not authorized."
     delete:
       summary: "delete user"
       tags:
@@ -107,6 +164,19 @@ paths:
                     type: string
               example:
                 message: "Success."
+        "401":
+          description: "client error"
+          content:
+            application/json:
+              schema:
+                type: object
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+              example:
+                message: "Not authorized."
 
 components:
   securitySchemes:
